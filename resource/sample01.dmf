@@ -1,0 +1,33 @@
+<tc_prf lsb="0" lea="3"  cp="0" sp="5060" is="Client" ds="Client" dp="sip" up="udp" pi="255" p="false" td="Fixed" sd="10" tr="0.1" tt="0" r="5" a="3000" f="1000" se="false" w="32768" subr="-1" subs="-1" tl="64" ts="0" f3w="false" frt="0" szd="Fixed" szs="10" sz="64" hd="1" aka="t" aka_ver="1" alg="md5" sk="0x00" opv="0x00000000000000000000000000000000" du="" cn="" noc="0x0" s0="64" s1="1500" s2="1500" s3="1500" s4="64" s5="64" s6="64" s7="64" s8="64" s9="64" n0="ORI" n1="InviteMsg" n2="RcvMsg" n3="200Msg" n4="buffer_5" n5="buffer_6" n6="buffer_7" n7="reserved_1" n8="reserved_2" n9="reserved_3"  win_scaling="-1"  disc="FIN"  mss="0"  vtm="0x0"  vtv="0x0"  ppid="0"  >
+<repository_item id="193"  type="4"  uid="0"  name="3.3.2"  sl="1333698287"  v=""  m1="sip"  m2="Y"  >
+	<d></d>
+</repository_item>
+	<cmds>
+		<cmd cs="true" ss="true" ct="1" st="2" cwr="true" swr="true" crb="9" srb="0" cpc="0" spc="0" cds="0" sds="0" cdp="0" sdp="0"  cre="true"  sre="true" csd="0" ssd="0" cih="false" sih="false" >
+		<cm>524547</cm>
+		<sm>534950</sm>
+		<caf2  v0='13'  v1='2'  v2='0'  v3='{RE -l}.*'  />
+		<saf2  v0='14'  v1='6'  v2='31'  v3='{RE -g1}^Via: \\(.*\\)'  v4='14'  v5='6'  v6='37'  v7='{RE -g1}^To: \\(.*\\)'  v8='14'  v9='6'  v10='60'  v11='{RE -g1}^From: \\(.*\\)'  v12='14'  v13='6'  v14='71'  v15='{RE -g1}^Call-ID: \\(.*\\)'  v16='14'  v17='6'  v18='188'  v19='{RE -g1}^CSeq: \\(.*\\)'  />
+		</cmd>
+		<cmd cs="true" ss="true" ct="1" st="2" cwr="true" swr="true" crb="9" srb="0" cpc="0" spc="0" cds="0" sds="0" cdp="0" sdp="0"  cre="true"  sre="true" csd="0" ssd="0" cih="false" sih="false" >
+		<cm>524547</cm>
+		<sm>534950</sm>
+		<caf2  v0='13'  v1='2'  v2='0'  v3='{RE -l}.*'  />
+		<saf2  v0='14'  v1='6'  v2='31'  v3='{RE -g1}^Via: \\(.*\\)'  v4='14'  v5='6'  v6='37'  v7='{RE -g1}^To: \\(.*\\)'  v8='14'  v9='6'  v10='60'  v11='{RE -g1}^From: \\(.*\\)'  v12='14'  v13='6'  v14='71'  v15='{RE -g1}^Call-ID: \\(.*\\)'  v16='14'  v17='6'  v18='188'  v19='{RE -g1}^CSeq: \\(.*\\)'  />
+		</cmd>
+		<cmd cs="true" ss="true" ct="1" st="2" cwr="true" swr="true" crb="9" srb="0" cpc="0" spc="0" cds="0" sds="0" cdp="0" sdp="0"  cre="true"  sre="true" csd="0" ssd="100" cih="false" sih="false" >
+		<cm>495354</cm>
+		<sm>2F322E</sm>
+		<caf2  v0='13'  v1='2'  v2='0'  v3='{RE -l}.*'  />
+		<saf2  v0='14'  v1='6'  v2='21'  v3='{RE -g1}^Via: \\(.*\\)'  v4='14'  v5='6'  v6='27'  v7='{RE -g1}^To: \\(.*\\)'  v8='14'  v9='6'  v10='50'  v11='{RE -g1}^From: \\(.*\\)'  v12='14'  v13='6'  v14='61'  v15='{RE -g1}^Call-ID: \\(.*\\)'  v16='14'  v17='6'  v18='72'  v19='{RE -g1}^Contact: \\(.*\\)'  v20='14'  v21='6'  v22='80'  v23='{RE -g1}^CSeq: \\(.*\\)'  />
+		</cmd>
+		<cmd cs="true" ss="true" ct="1" st="2" cwr="true" swr="true" crb="10" srb="0" cpc="0" spc="0" cds="0" sds="0" cdp="0" sdp="0"  cre="true"  sre="true" csd="0" ssd="500" cih="false" sih="false" >
+		<cm>535542</cm>
+		<sm>534950</sm>
+		<caf2  v0='13'  v1='2'  v2='0'  v3='{RE -l}.*'  />
+		<saf2  v0='14'  v1='6'  v2='21'  v3='{RE -g1}^Via: \\(.*\\)'  v4='14'  v5='6'  v6='27'  v7='{RE -g1}^To: \\(.*\\)'  v8='14'  v9='6'  v10='50'  v11='{RE -g1}^From: \\(.*\\)'  v12='14'  v13='6'  v14='61'  v15='{RE -g1}^Call-ID: \\(.*\\)'  v16='14'  v17='6'  v18='72'  v19='{RE -g1}^Contact: \\(.*\\)'  v20='14'  v21='6'  v22='80'  v23='{RE -g1}^CSeq: \\(.*\\)'  />
+		</cmd>
+	</cmds>
+	<sps>
+	</sps>
+</tc_prf>
