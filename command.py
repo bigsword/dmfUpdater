@@ -25,6 +25,12 @@ class CommandBuilder():
     def getServerCommands(self):
         return self.getCommands('s')
 
+    def getClientCommands(self):
+        total_cmds = []
+        for dmf_name in self.dmfs:
+            path_name = DMF_ROOT + '\\' + dmf_name
+            total_cmds.extend([if cmd.isClient() for cmd in Dmf(path_name)])
+
     def getCommands(self, side):
         # sort all dmfs
         # get commands one file by the other
@@ -47,6 +53,10 @@ class Command:
         self.file_name = file_name
         self.step = step
         self.side = side
+
+    def __str__(self):
+        case_number = self.file_name.split('-')[0]
+        return case_number + '/' + str(self.step)
 
     def getText(self):
         dom = parse(DMF_ROOT + '\\' + self.file_name)
@@ -88,11 +98,6 @@ class Command:
                 return False
         else:
             return True
-
-
-    def __str__(self):
-        case_number = self.file_name.split('-')[0]
-        return case_number + '/' + str(self.step)
 
     def getCRC32(self):
         return str(binascii.crc32(self.getText()) & 0xffffffff)
