@@ -5,7 +5,7 @@
 """docstring
 """
 from xml.dom.minidom import parse
-from command import *
+from commandBuilder import *
 
 __revision__ = '0.1'
 
@@ -17,8 +17,6 @@ __revision__ = '0.1'
 # 3.4.1/9/s, 3.5.9/16/s, 3.10.2/s
 # 3.4.1/12/c, 3.4.5/8/c, 3.7.4/c
 # all the same commands lie in the same line, seprated by comma. 
-
-from xml.dom.minidom import parse
 
 def same(cmd_left, cmd_right):
     """determin how to verify 
