@@ -23,7 +23,8 @@ from xml.dom.minidom import parse
 def same(cmd_left, cmd_right):
     """determin how to verify 
     """
-    same_attr(cmd_left, cmd_right)
+    #TODO Af2 is currently ignored
+    cmd_left.sameAf2(cmd_right)
     return same_text(cmd_left, cmd_right)
 
 

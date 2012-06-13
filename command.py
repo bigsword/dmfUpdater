@@ -29,7 +29,7 @@ class CommandBuilder():
         total_cmds = []
         for dmf_name in self.dmfs:
             path_name = DMF_ROOT + '\\' + dmf_name
-            total_cmds.extend([if cmd.isClient() for cmd in Dmf(path_name)])
+            total_cmds.extend([cmd for cmd in Dmf(path_name) if cmd.isClient()])
 
     def getCommands(self, side):
         # sort all dmfs
@@ -41,25 +41,29 @@ class CommandBuilder():
             dom = parse(path)
             cmds = dom.getElementsByTagName('cmd')
             for i in range(cmds.length):
-                total_cmds.append(Command(dmf_name, i, side))
+                total_cmds.append(Command(path, i, side))
 
         return total_cmds
 
 
 class Command:
-    def __init__(self, file_name, step, side):
+    def __init__(self, path_name, step, side):
         """side can be ether client or server
         """
-        self.file_name = file_name
+        self.path_name = path_name
         self.step = step
         self.side = side
 
     def __str__(self):
-        case_number = self.file_name.split('-')[0]
+        file_name = os.path.basename(self.path_name)
+        case_number = file_name.split('-')[0]
         return case_number + '/' + str(self.step)
+    
+    #TODO def __cmp__(self):
+
 
     def getText(self):
-        dom = parse(DMF_ROOT + '\\' + self.file_name)
+        dom = parse(self.path_name)
         cmd = dom.getElementsByTagName('cmd')[self.step]
         part = cmd.getElementsByTagName(self.side+'m')[0]
         if part.hasChildNodes():
@@ -68,13 +72,13 @@ class Command:
             return os.urandom(7)
 
     def _getAf2(self):
-        dom = parse(DMF_ROOT + '\\' + self.file_name)
+        dom = parse(self.path_name)
         cmd = dom.getElementsByTagName('cmd')[self.step]
-        part = cmd.getElementsByTagName(self.side+'af2')[0]
+        part = cmd.getElementsByTagName(self.side+'af2')
         if part:
-            return part.attributes
+            return part[0].attributes
         else:
-            return None
+            return None # I with I can get a empty/blank/none NamedNodeMap
 
     def sameAf2(self, otherCmd):
         attr_self = self._getAf2()
