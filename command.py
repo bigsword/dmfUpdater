@@ -10,6 +10,7 @@ __revision__ = '0.1'
 import os
 import binascii
 from xml.dom.minidom import parse
+from dmf import *
 
 
 DMF_ROOT = r'd:\dmf'
@@ -104,7 +105,13 @@ class Command:
             return True
 
     def getCRC32(self):
-        return str(binascii.crc32(self.getText()) & 0xffffffff)
+        return '%X' % (binascii.crc32(self.getText()) & 0xffffffff)
+
+    def isClient(self):
+        return self.side == 'c'
+
+    def isServer(self):
+        return self.side == 's'
 
 if __name__ == '__main__':
     cmds = CommandBuilder(DMF_LIST).getCommands('s')
