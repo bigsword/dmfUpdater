@@ -17,15 +17,11 @@ class commandTest(TestCase):
     def tearDown(self):
         pass
 
-    def testExample(self):
-        self.assertEqual(1, 1)
-
-    def testOther(self):
-        self.assertNotEqual(0, 1)
-
     def testAf2(self):
-        cmd1 = Command('3.3.2-Ringing_Timer_Stopped_Due_To_Call_Answered.dmf', 0, 's')
-        cmd2 = Command('3.3.3-Ringing_Timer_Stopped_Due_To_Call_Ignored.dmf', 0, 's')
+        path1 = r'./resource/3.3.2-Ringing_Timer_Stopped_Due_To_Call_Answered.dmf'
+        path2 = r'./resource/3.3.3-Ringing_Timer_Stopped_Due_To_Call_Ignored.dmf'
+        cmd1 = Command(path1, 0, 's')
+        cmd2 = Command(path2, 0, 's')
 
         self.assertTrue(cmd1.sameAf2(cmd2))
 

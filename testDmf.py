@@ -12,7 +12,7 @@ from dmf import *
 
 class dmfTest(TestCase):
     def setUp(self):
-        self.dmf = Dmf(r'D:\Workspace2\dmfUpdater\resource\sample01.dmf')
+        self.dmf = Dmf(r'./resource/sample01.dmf')
 
     def tearDown(self):
         pass
