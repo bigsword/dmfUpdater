@@ -10,6 +10,7 @@ __revision__ = '0.1'
 import os
 import binascii
 from xml.dom.minidom import parse
+from xml.etree import ElementTree
 
 
 class Command():
@@ -77,6 +78,21 @@ class Command():
 
     def isServer(self):
         return self.side == 's'
+
+    def updateFrom(self, command):
+        et = ElementTre.parse(self.path_name)
+        cmd = et.findall('cmds/cmd')[self.step]
+
+        #TODO make sure both commands are on the same side
+
+        et_other = ElementTre.parse(command.path_name)
+        cmd_other = et_other.findall('cmds/cmd')[self.step]
+
+        # update cm
+        # update 
+
+
+        pass
 
 if __name__ == '__main__':
     cmds = CommandBuilder(DMF_LIST).getCommands('s')
