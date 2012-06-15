@@ -26,13 +26,13 @@ class Dmf():
         if self._index < self._row_count:
             cmd = Command(self._pathName, self._index, self._side)
             self._index = self._next_index(self._index, self._side)
-            self._side = self._side_fliper(self._side)
+            self._side = self._next_side()
             return cmd
         else:
             raise StopIteration
 
-    def _side_fliper(self, side):
-        return 's' if side == 'c' else 'c'
+    def _next_side(self):
+        return 's' if self._side == 'c' else 'c'
 
     def _next_index(self, current_index, current_side):
         if current_side == 'c':
@@ -43,7 +43,7 @@ class Dmf():
     def getCommand(self, index, side):
         return Command(self._pathName, i, side)
 
-    def setCommand(self, index, side):
+    def setCommand(self, index, side, command):
         pass
 
     def save(self):
